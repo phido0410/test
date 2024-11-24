@@ -80,7 +80,7 @@ import streamlit as st
 
 def load_faq():
     """Load FAQ data from JSON file."""
-    with open("faq_data.json", "r") as file:
+    with open("https://raw.githubusercontent.com/AhnTus/STWeb-HousePricePrediction/refs/heads/main/Deployment/faq_data.json", "r") as file:
         data = json.load(file)
     return data["faq"]
 
