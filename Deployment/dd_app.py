@@ -7,7 +7,9 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
-from streamlit_folium import folium_static  
+from streamlit_folium import folium_static
+import requests
+from io import BytesIO
 
 
 import warnings
@@ -18,8 +20,6 @@ dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads
 
 
 def run_dd_app():
-    import requests
-    from io import BytesIO
 
     url = "https://github.com/user-attachments/assets/7ae34de1-5a39-4a79-ae92-8fa934e721f0"
     response = requests.get(url)

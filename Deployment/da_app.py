@@ -7,16 +7,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 from streamlit_folium import folium_static  
-
+import requests
+from io import BytesIO
 import warnings
 warnings.filterwarnings('ignore')
 
 df = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/main/Deployment/Final_Project.csv")
 df.drop('Unnamed: 0', axis=1, inplace=True)
 dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Map_Location.csv")
-
-import requests
-from io import BytesIO
 
 def run_da_app():
 
