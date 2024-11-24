@@ -12,7 +12,7 @@ from streamlit_folium import folium_static
 
 import warnings
 warnings.filterwarnings('ignore')
-df = pd.read_csv("Final_Project.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Final_Project.csv")
 df.drop('Unnamed: 0', axis=1, inplace=True)  
 dfmap = pd.read_csv("Map_Location.csv")
 
