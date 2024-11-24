@@ -207,9 +207,9 @@ def main():
     elif choice == "💵 Prediction":
         run_ml_app()
     elif choice == "🗺️ Map":
-        path_to_html = "https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/mumbai_property.html"
-        with open(path_to_html, 'r') as f:
-            html_data = f.read()
+        url_to_html = "https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/mumbai_property.html"
+        response = requests.get(url_to_html)
+        html_data = response.text
         st.subheader("Map view:")
         components.html(html_data, height=500)
 

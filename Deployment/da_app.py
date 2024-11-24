@@ -11,14 +11,19 @@ from streamlit_folium import folium_static
 import warnings
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Final_Project.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/main/Deployment/Final_Project.csv")
 df.drop('Unnamed: 0', axis=1, inplace=True)
 dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Map_Location.csv")
+
+import requests
+from io import BytesIO
 
 def run_da_app():
 
     # Hiển thị ảnh banner
-    img1 = Image.open("https://github.com/user-attachments/assets/6047fc2a-4d34-4d5f-8bb3-70b7ec8a2e69")
+    url = "https://github.com/user-attachments/assets/6047fc2a-4d34-4d5f-8bb3-70b7ec8a2e69"
+    response = requests.get(url)
+    img1 = Image.open(BytesIO(response.content))
     st.image(img1, caption="Analyzing Real Estate Data")
 
     # Price with floor number

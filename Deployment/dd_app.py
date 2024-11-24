@@ -18,7 +18,12 @@ dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads
 
 
 def run_dd_app():
-    img1 = Image.open("https://github.com/user-attachments/assets/7ae34de1-5a39-4a79-ae92-8fa934e721f0")
+    import requests
+    from io import BytesIO
+
+    url = "https://github.com/user-attachments/assets/7ae34de1-5a39-4a79-ae92-8fa934e721f0"
+    response = requests.get(url)
+    img1 = Image.open(BytesIO(response.content))
     st.image(img1)
 
     # Display dataset directly
