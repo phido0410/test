@@ -78,10 +78,12 @@ def apply_styles():
 import json
 import streamlit as st
 
+import requests
+
 def load_faq():
     """Load FAQ data from JSON file."""
-    with open("https://raw.githubusercontent.com/AhnTus/STWeb-HousePricePrediction/refs/heads/main/Deployment/faq_data.json", "r") as file:
-        data = json.load(file)
+    response = requests.get("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/faq_data.json")
+    data = response.json()
     return data["faq"]
 
 def search_faq(query, faq_data):
