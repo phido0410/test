@@ -8,9 +8,9 @@ from random import choice
 from streamlit_folium import folium_static
 
 # Load dữ liệu và mô hình
-df = pd.read_csv("/Users/dophi/Desktop/STWeb-HousePricePrediction-main/test/Deployment/Final_Project.csv")
-dfmap = pd.read_csv("/Users/dophi/Desktop/STWeb-HousePricePrediction-main/test/Deployment/Map_Location.csv")
-with open('/Users/dophi/Desktop/STWeb-HousePricePrediction-main/test/Deployment/regression_model.pkl', 'rb') as pickle_in:
+df = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Final_Project.csv")
+dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Map_Location.csv")
+with open('Deployment/regression_model.pkl', 'rb') as pickle_in:
     reg = pickle.load(pickle_in)
 # Dữ liệu tọa độ tĩnh
 predefined_locations = {
