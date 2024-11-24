@@ -18,7 +18,7 @@ dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads
 def run_da_app():
 
     # Hiển thị ảnh banner
-    img1 = Image.open("Real_Estate.jpg")
+    img1 = Image.open("https://github.com/user-attachments/assets/6047fc2a-4d34-4d5f-8bb3-70b7ec8a2e69")
     st.image(img1, caption="Analyzing Real Estate Data")
 
     # Price with floor number
