@@ -8,10 +8,17 @@ from random import choice
 from streamlit_folium import folium_static
 
 # Load dữ liệu và mô hình
+import requests
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 df = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Final_Project.csv")
 dfmap = pd.read_csv("https://raw.githubusercontent.com/phido0410/test/refs/heads/main/Deployment/Map_Location.csv")
-with open('Deployment/regression_model.pkl', 'rb') as pickle_in:
-    reg = pickle.load(pickle_in)
+
+url = 'https://github.com/phido0410/test/blob/main/Deployment/regression_model.pkl?raw=true'
+response = requests.get(url)
+reg = pickle.loads(response.content)
 # Dữ liệu tọa độ tĩnh
 predefined_locations = {
     "Marine Drive, Mumbai, Maharashtra": (18.9441, 72.8235),
